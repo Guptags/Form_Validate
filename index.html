@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+
+<title>Drink club winery</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+<link rel="stylesheet" href="styles.css">
+
+<form action="https://formspree.io/f/mqkjrren" method="post">
+    <fieldset>
+        <legend>personal info</legend>
+
+        <label for="name">Name</label>
+        <input required autofocus autocomplete="name" type="text" id="name" name="username" placeholder="enter full name">
+        <!--autofocus se curser name field me khud hi aa jayega jab bhi page reload karenge. useful in search boxes-->
+        
+        <label for="phone">phone</label>
+        <input pattern="[0-9]*" required autocomplete="tel" type="tel" id="phone" name="phone" placeholder="enter your contact number">
+        <!--we use regular expression in patterns-->
+
+        <label for="email">email</label>
+        <input optional autocomplete="email" type="email" id="email" name="email" placeholder="enter your email address">
+
+        <label for="birthday">birthday</label>
+        <input type="date"  placeholder="dd-mm-yyyy" min="1997-01-01" max="2030-12-31 name="birthday" id="birthday">
+    </fieldset>
+    <fieldset>
+        <legend>biscuit order</legend>
+
+        <label for="parleg">quantity # parle-g</label>
+        <input type="range" name="parleg" max="100" min="0" id="parleg" placeholder="0 to 100">
+        <!-- here in this range type we are not able to see the qty of parleg
+        for this we use javascript-->
+
+        <label for="tt">quantity # twenty20</label>
+        <input type="number" name="tt" id="tt"  max="100" min="0" placeholder="0 to 100">
+
+        <label for="britania">quantity #britania</label>
+        <input type="number" name="britania" max="100" min="0" id="britania" placeholder="0 to 100">
+        
+        <section class="nowrap"><!--section is to  not apply default lablel properties in the lable inside-->
+        <input type="checkbox" value="gift" optional name="gift" id="gift">
+        <label for="gift">this is gift</label>
+        </section>
+    </fieldset>
+    <fieldset>
+        <legend>address</legend>
+
+        <section class="nowrap"><!--section is to  not apply default lablel properties in the lable inside-->
+            <input type="radio" value="standard" id="standard" name="shipping-type">
+            <label for="standard">standard 5$</label>
+        </section>
+        <section class="nowrap"><!--section is to  not apply default lablel properties in the lable inside-->
+            <input type="radio" value="dhl" id="dhl" name="shipping-type">
+            <label for="dhl">dhl 15$</label>
+        </section>
+        <section class="nowrap"><!--section is to  not apply default lablel properties in the lable inside-->
+            <input type="radio" value="bluedart" id="bluedart" name="shipping-type">
+            <label for="bluedart">bluedart 25$</label>
+        </section>
+
+        <label for="streetname">streetname</label>
+        <input type="text" id="streetname" name="streetname" placeholder="enter your street name">
+
+        <label for="country">country</label>
+        <select id="country" name="country" multiple> <!--use multiple empty attribute to select many options at once-->
+            <optgroup label="europe">
+                <option value="germney">germney</option>
+            </optgroup>
+            <optgroup label="america">
+                <option value="usa">usa</option>
+                <option value="canada">canada</option>
+                <option value="brazil">brazil</option>
+            </optgroup>
+            <optgroup label="asia">
+                <option value="china">china</option>
+                <option value="pakistan">pakistan</option>
+                <option selected value="india">india</option> <!--selected empty attribute-->
+                <option value="srilanka">srilanka</option>
+                <option value="russia">russia</option>
+            </optgroup>
+        </select>
+
+        <label for="city">city</label>
+        <input type="text" id="city" name="city">
+
+        <label for="street">street</label>
+        <input type="text" pattern="[0-9]*" id="street" name="street" placeholder="enter your street number">
+        <!--see pattern attrib here = any amount of numeric digits only-->
+        
+        <label for="preferedtime">prefered time to receive order</label>
+        <input type="time" id="preferedtime" name="preferedtime">
+        <!--type=datetime-local is useful when date and time is selected from one option only-->
+
+        <label for="comments">comments</label>
+        <textarea name="comments" id="comments" cols="90%" rows="10"></textarea>
+    </fieldset>
+    
+    <input type="submit" value="order">
+
+
+</form>
